@@ -1,5 +1,19 @@
-import { AppBar, Box, Container, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Container, styled, Toolbar, Typography } from "@mui/material";
 import React from "react";
+import { NavLink } from 'react-router-dom';
+
+
+const StyledNavLink = styled(NavLink) ({
+    textDecoration:'none',
+    color:'#fff',
+    fontSize:20,
+    "&.active": {
+      background:'navy',
+      padding:10,
+      borderRadius:5
+    }
+})
+
 
 const Navbar = () => {
   return (
@@ -9,9 +23,9 @@ const Navbar = () => {
           <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
             <Typography variant="h5">Router 6.4 and above</Typography>
             <Box sx={{ display: "flex", alignItems: "center", gap: "50px" }}>
-              <Typography>Home</Typography>
-              <Typography>About</Typography>
-              <Typography>Contact</Typography>
+              <StyledNavLink to='/'>Home</StyledNavLink>
+              <StyledNavLink to='about'>About</StyledNavLink>
+              <StyledNavLink to='contact'>Contact</StyledNavLink>
             </Box>
           </Toolbar>
         </Container>
