@@ -4,10 +4,10 @@ import Navbar from './components/Navbar';
 import Rootlayout from './layouts/Rootlayout';
 import Home from './screens/Home';
 import About from './screens/About';
-import Contact from './screens/Contact';
 import ContactLayout from './layouts/ContactLayout';
 import Mail from './screens/Mail';
 import Phone from './screens/Phone';
+import PageNotFound from './screens/PageNotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +18,7 @@ const router = createBrowserRouter(
               <Route path='mail' element={<Mail/>}/>
               <Route path='phone' element={<Phone/>}/>
           </Route>
+          <Route path='*' element={<PageNotFound/>}/>
       </Route>
   )
 )
