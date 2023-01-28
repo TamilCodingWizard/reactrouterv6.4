@@ -1,6 +1,7 @@
 import { AppBar, Box, Container, styled, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { NavLink } from 'react-router-dom';
+import Careers from './../screens/Careers';
 
 
 const StyledNavLink = styled(NavLink) ({
@@ -26,6 +27,7 @@ const Navbar = () => {
               <StyledNavLink to='/'>Home</StyledNavLink>
               <StyledNavLink to='about'>About</StyledNavLink>
               <StyledNavLink to='contact'>Contact</StyledNavLink>
+              <StyledNavLink to='careers'>Careers</StyledNavLink>
             </Box>
           </Toolbar>
         </Container>
