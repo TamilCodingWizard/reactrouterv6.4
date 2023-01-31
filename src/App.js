@@ -11,6 +11,7 @@ import PageNotFound from './screens/PageNotFound';
 import CareersLayout from './layouts/CareersLayout';
 import Careers, { careerLoader } from './screens/Careers';
 import CareerError from './screens/CareerError';
+import CareerDetail, { jobDetailLoader } from './screens/CareerDetail';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
           </Route>
           <Route path='careers' element={<CareersLayout/>}>
             <Route index element={<Careers/>} loader={careerLoader} errorElement={<CareerError/>}/>
+            <Route path=':id' element={<CareerDetail/>} loader={jobDetailLoader} errorElement={<CareerError/>}/>
           </Route>
           <Route path='*' element={<PageNotFound/>}/>
       </Route>
