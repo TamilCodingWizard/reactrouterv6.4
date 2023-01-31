@@ -9,7 +9,8 @@ import Mail from './screens/Mail';
 import Phone from './screens/Phone';
 import PageNotFound from './screens/PageNotFound';
 import CareersLayout from './layouts/CareersLayout';
-import Careers from './screens/Careers';
+import Careers, { careerLoader } from './screens/Careers';
+import CareerError from './screens/CareerError';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,7 +22,7 @@ const router = createBrowserRouter(
               <Route path='phone' element={<Phone/>}/>
           </Route>
           <Route path='careers' element={<CareersLayout/>}>
-            <Route index element={<Careers/>}/>
+            <Route index element={<Careers/>} loader={careerLoader} errorElement={<CareerError/>}/>
           </Route>
           <Route path='*' element={<PageNotFound/>}/>
       </Route>
