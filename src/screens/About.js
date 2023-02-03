@@ -1,7 +1,14 @@
-import React from 'react'
-import { Typography } from '@mui/material';
+import React, { useState } from 'react'
+import { Button, Typography } from '@mui/material';
+import { Navigate } from 'react-router-dom';
 
 const About = () => {
+  const [user,setUser] = useState('test')
+
+  if (!user) {
+    return <Navigate to='/' replace={true}/>
+  }
+
   return (
     <>
       <Typography variant="h3">About</Typography>
@@ -16,6 +23,7 @@ const About = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </Typography>
+      <Button variant='contained' onClick={() => setUser(null)}>Logout</Button>
     </>
   )
 }
